@@ -33,18 +33,22 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="Costo" min="-2" pref="83" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="InAncho" min="-2" pref="56" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Costo" min="-2" pref="83" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -53,11 +57,15 @@
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                      <Component id="CSUR" min="-2" pref="82" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="54" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -71,16 +79,25 @@
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="InAncho" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Costo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Costo" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Component id="CSUR" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -88,7 +105,7 @@
                       <Component id="jScrollPane1" min="-2" pref="288" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -128,7 +145,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="El Costo Minimo Es:"/>
+        <Property name="text" type="java.lang.String" value="El Costo Minimo Con el Ultimo Renglo Es: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -150,6 +167,16 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="El Costo Minimo Sin el Ultimo Renglo Es: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="CSUR">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

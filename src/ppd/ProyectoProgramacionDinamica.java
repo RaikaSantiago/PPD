@@ -22,7 +22,7 @@ public class ProyectoProgramacionDinamica {
         Acontinuación se representan dos bucles que me calcularan el costo 
         de poner palabras de i a j  en una linea Si las palabras  no encajan  en una linea,
         entonces ponemos un entero max_value
-        */
+         */
         for (int i = 0; i < words.length; i++) {
             cost[i][i] = width - words[i].length();
             for (int j = i + 1; j < words.length; j++) {
@@ -67,15 +67,14 @@ public class ProyectoProgramacionDinamica {
                 }
             }
         }
+
         int n = 0;
         int Auxiliar1;
-        
-        //Pruebas 
-        for (int i = 0; i < minCost.length; i++) {
-                    System.out.println( minCost[i]+"\t");
-            }
 
-//        System.out.println("El Costo Minimo Es: " + minCost[0]);
+//        //Pruebas 
+//        for (int i = 0; i < minCost.length; i++) {
+//            System.out.println(minCost[i] + "");
+//        }
 //        System.out.println("\n");
 
         /*
@@ -107,9 +106,22 @@ public class ProyectoProgramacionDinamica {
             //System.out.println(builder.append("1"));
             n = Auxiliar1;
         } while (Auxiliar1 < words.length);
+       
+        /*
+          @CSUR Me guarda el costo minimo  sin la ultima linea resta la ultima 
+           posicion de los costo  con el total de los costos
+        */
+        int CostoUltimaLinea = cost[cost.length - 1][cost.length - 1];
+        System.out.println("El Costo de la  Ultima linea Es: " + CostoUltimaLinea);
+        System.out.println("El Costo Minimo Es: " + (minCost[0] - CostoUltimaLinea));
+
+        String CSUR = Integer.toString(minCost[0] - CostoUltimaLinea);
 
         if (b == 1) {
             return Variable1 = builder.toString();
+        }
+        if (b == 2) {
+            return CSUR;
         } else {
             return Variable2 = Integer.toString(minCost[0]);
         }
@@ -162,7 +174,7 @@ public class ProyectoProgramacionDinamica {
         En Java el método split(String regEx) nos permite dividir una cadena en base
         a las ocurrencias de una expresión regular definida dentro. Ya que es una expresión 
         regular puede ser simplemente una letra, coma, signo o una construcción mas elaborada.
-        */
+         */
         return arreglo;
     }
 
