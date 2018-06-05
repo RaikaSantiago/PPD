@@ -35,6 +35,7 @@ public class Ventana extends javax.swing.JFrame {
         setTitle("Justificador De Texto");
         setName("Justificador De Texto"); // NOI18N
 
+        TextoArea.setEditable(false);
         TextoArea.setColumns(20);
         TextoArea.setRows(5);
         jScrollPane1.setViewportView(TextoArea);

@@ -41,13 +41,13 @@ public class ProyectoProgramacionDinamica {
                 }
             }
         }
-        //Muestra la matriz  cost
-        for (int i = 0; i < words.length; i++) {
-            for (int j = 0; j < words.length; j++) {
-                System.out.print(cost[i][j] + "\t");
-            }
-            System.out.println();
-        }
+//        //Muestra la matriz  cost
+//        for (int i = 0; i < words.length; i++) {
+//            for (int j = 0; j < words.length; j++) {
+//                System.out.print(cost[i][j] + "\t");
+//            }
+//            System.out.println();
+//        }
 
         //minCost from i to len is found by trying
         //j between i to len and checking which
@@ -69,6 +69,11 @@ public class ProyectoProgramacionDinamica {
         }
         int n = 0;
         int Auxiliar1;
+        
+        //Pruebas 
+        for (int i = 0; i < minCost.length; i++) {
+                    System.out.println( minCost[i]+"\t");
+            }
 
 //        System.out.println("El Costo Minimo Es: " + minCost[0]);
 //        System.out.println("\n");
