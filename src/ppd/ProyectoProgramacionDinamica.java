@@ -95,7 +95,7 @@ public class ProyectoProgramacionDinamica {
     }
 
     /*
-        El Metodo @LongitudMaximaString saca la longitud maxima en un arreglo 
+        El Metodo @LongitudMaximaString saca la longitud maxima de un elemento en un arreglo 
         como podria ser una palabra, esto con el fin de hacer una validación 
         para el ancho del texto requerido y no genere conflicto con  el metodo 
         justificar; @LongitudString sacara la palabra mas larga del arreglo y 
