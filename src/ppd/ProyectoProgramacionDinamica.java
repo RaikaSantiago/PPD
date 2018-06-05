@@ -66,6 +66,13 @@ public class ProyectoProgramacionDinamica {
                 }
             }
         }
+        System.out.print("Arreglo Resultado");
+        //Muestra arreglo result
+        for (int i = 0; i < words.length; i++) {
+            System.out.print(result[i] + "\t");
+
+        }
+
         int n = 0;
         int Auxiliar1;
 
@@ -77,6 +84,19 @@ public class ProyectoProgramacionDinamica {
           agregada en el búfer de cadena y lo impríme.
          */
         StringBuilder builder = new StringBuilder();
+        /*
+        Un objeto StringBuilder es una secuencia de caracteres mutable, 
+        su contenido y capacidad puede cambiar en cualquier momento. Además,
+        a diferencia de los Strings, los builders cuentan con una capacidad (capacity),
+        la cantidad de espacios de caracteres asignados. 
+        Ésta es siempre mayor o igual que la longitud (length) y
+        se expande automáticamente para acomodarse a más caracteres.
+        
+        Los operadores principales de la clase StringBuilder son append e insert. 
+        Éstos se implementaron sobrecargados para aceptar cualquier tipo de datos.
+        Cada uno convierte un dato en String y concatena o inserta los caracteres de dicho String al StrinBuilder.
+        El método append agrega los caracteres al final de builder mientras que insert los agrega en un punto específico.
+         */
         do {
             Auxiliar1 = result[n];
             for (int i = n; i < Auxiliar1; i++) {
