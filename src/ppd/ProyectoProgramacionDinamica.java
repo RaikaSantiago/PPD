@@ -18,10 +18,11 @@ public class ProyectoProgramacionDinamica {
         String Variable2 = "";
 
         int cost[][] = new int[words.length][words.length];
-
-        //Acontinuación se representan dos bucles que me calcularan el costo 
-        //de poner palabras de i a j  en una linea
-        // Si las palabras  no encajan  en una linea, entonces ponemos un entero max_value
+        /*
+        Acontinuación se representan dos bucles que me calcularan el costo 
+        de poner palabras de i a j  en una linea Si las palabras  no encajan  en una linea,
+        entonces ponemos un entero max_value
+        */
         for (int i = 0; i < words.length; i++) {
             cost[i][i] = width - words[i].length();
             for (int j = i + 1; j < words.length; j++) {
@@ -111,7 +112,7 @@ public class ProyectoProgramacionDinamica {
     }
 
     /*
-        El Metodo @LongitudMaximaString saca la longitud maxima de un elemento en un arreglo 
+        El Metodo  @LongitudMaximaString saca la longitud maxima de un elemento en un arreglo 
         como podria ser una palabra, esto con el fin de hacer una validación 
         para el ancho del texto requerido y no genere conflicto con  el metodo 
         justificar; @LongitudString sacara la palabra mas larga del arreglo y 
@@ -143,8 +144,8 @@ public class ProyectoProgramacionDinamica {
             String Aux = "";
             String bfRead;
             while ((bfRead = bf.readLine()) != null) {
-                // haz ciclo, mientras bfRead tiene datos
-                Aux = Aux + bfRead; // guardado el texto del archivo 
+                // Hace ciclo, mientras bfRead tiene datos
+                Aux = Aux + bfRead; // guardada el texto del archivo 
             }
             Texto = Aux;
             // variable donde queda guardado el texto
@@ -152,7 +153,11 @@ public class ProyectoProgramacionDinamica {
             System.err.println("No se encontro el archivo");
         }
         String[] arreglo = Texto.split(" ");
-
+        /*
+        En Java el método split(String regEx) nos permite dividir una cadena en base
+        a las ocurrencias de una expresión regular definida dentro. Ya que es una expresión 
+        regular puede ser simplemente una letra, coma, signo o una construcción mas elaborada.
+        */
         return arreglo;
     }
 
