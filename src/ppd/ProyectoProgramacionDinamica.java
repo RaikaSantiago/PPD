@@ -45,7 +45,7 @@ public class ProyectoProgramacionDinamica {
             for (int j = 0; j < words.length; j++) {
                 System.out.print(cost[i][j] + "\t");
             }
-                System.out.println();
+            System.out.println();
         }
 
         //minCost from i to len is found by trying
@@ -71,8 +71,11 @@ public class ProyectoProgramacionDinamica {
 
 //        System.out.println("El Costo Minimo Es: " + minCost[0]);
 //        System.out.println("\n");
-        //finally put all words with new line added in 
-        //string buffer and print it.
+
+        /*
+          Finalmente pone todas las palabras con una nueva línea 
+          agregada en el búfer de cadena y lo impríme.
+         */
         StringBuilder builder = new StringBuilder();
         do {
             Auxiliar1 = result[n];
