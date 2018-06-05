@@ -66,13 +66,6 @@ public class ProyectoProgramacionDinamica {
                 }
             }
         }
-        System.out.print("Arreglo Resultado");
-        //Muestra arreglo result
-        for (int i = 0; i < words.length; i++) {
-            System.out.print(result[i] + "\t");
-
-        }
-
         int n = 0;
         int Auxiliar1;
 
