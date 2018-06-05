@@ -40,6 +40,13 @@ public class ProyectoProgramacionDinamica {
                 }
             }
         }
+        //Muestra la matriz  cost
+        for (int i = 0; i < words.length; i++) {
+            for (int j = 0; j < words.length; j++) {
+                System.out.print(cost[i][j] + "\t");
+            }
+                System.out.println();
+        }
 
         //minCost from i to len is found by trying
         //j between i to len and checking which
