@@ -73,7 +73,7 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("El Costo Minimo Sin el Ultimo Renglo Es: ");
+        jLabel4.setText("El Costo Minimo Sin El Ultimo Renglo Es: ");
 
         CSUR.setEditable(false);
 

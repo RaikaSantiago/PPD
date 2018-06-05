@@ -170,7 +170,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="El Costo Minimo Sin el Ultimo Renglo Es: "/>
+        <Property name="text" type="java.lang.String" value="El Costo Minimo Sin El Ultimo Renglo Es: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="CSUR">
