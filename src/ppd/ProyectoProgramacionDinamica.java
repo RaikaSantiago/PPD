@@ -5,8 +5,8 @@ import java.io.*;
 /*
    UNIVERSIDAD DEL VALLE
    FACULTAD DE INGENIERIA
-   MATERIA FADA, TEMA OPTIMIZACIÃ“N
-   PROYECTO JUSTIFICACIÃ“N DE TEXTO 
+   MATERIA FADA, TEMA OPTIMIZACIÓN
+   PROYECTO JUSTIFICACIÓN DE TEXTO 
 
    Planteamiento:
  */
@@ -19,7 +19,7 @@ public class ProyectoProgramacionDinamica {
 
         int cost[][] = new int[words.length][words.length];
         /*
-        AcontinuaciÃ³n se representan dos bucles que me calcularan el costo 
+        Acontinuación se representan dos bucles que me calcularan el costo 
         de poner palabras de i a j  en una linea Si las palabras  no encajan  en una linea,
         entonces ponemos un entero max_value
          */
@@ -78,22 +78,22 @@ public class ProyectoProgramacionDinamica {
 //        System.out.println("\n");
 
         /*
-          Finalmente pone todas las palabras con una nueva lÃ­nea 
-          agregada en el bÃºfer de cadena y lo imprÃ­me.
+          Finalmente pone todas las palabras con una nueva línea 
+          agregada en el búfer de cadena y lo impríme.
          */
         StringBuilder builder = new StringBuilder();
         /*
         Un objeto StringBuilder es una secuencia de caracteres mutable, 
-        su contenido y capacidad puede cambiar en cualquier momento. AdemÃ¡s,
+        su contenido y capacidad puede cambiar en cualquier momento. Además,
         a diferencia de los Strings, los builders cuentan con una capacidad (capacity),
         la cantidad de espacios de caracteres asignados. 
-        Ã‰sta es siempre mayor o igual que la longitud (length) y
-        se expande automÃ¡ticamente para acomodarse a mÃ¡s caracteres.
+        Ésta es siempre mayor o igual que la longitud (length) y
+        se expande automáticamente para acomodarse a más caracteres.
         
         Los operadores principales de la clase StringBuilder son append e insert. 
-        Ã‰stos se implementaron sobrecargados para aceptar cualquier tipo de datos.
+        Éstos se implementaron sobrecargados para aceptar cualquier tipo de datos.
         Cada uno convierte un dato en String y concatena o inserta los caracteres de dicho String al StrinBuilder.
-        El mÃ©todo append agrega los caracteres al final de builder mientras que insert los agrega en un punto especÃ­fico.
+        El método append agrega los caracteres al final de builder mientras que insert los agrega en un punto específico.
          */
         do {
             Auxiliar1 = result[n];
@@ -116,7 +116,9 @@ public class ProyectoProgramacionDinamica {
         System.out.println("El Costo Minimo Es: " + (minCost[0] - CostoUltimaLinea));
 
         String CSUR = Integer.toString(minCost[0] - CostoUltimaLinea);
-
+        
+        
+        
         if (b == 1) {
             return Variable1 = builder.toString();
         }
@@ -130,10 +132,10 @@ public class ProyectoProgramacionDinamica {
 
     /*
         El Metodo  @LongitudMaximaString saca la longitud maxima de un elemento en un arreglo 
-        como podria ser una palabra, esto con el fin de hacer una validaciÃ³n 
+        como podria ser una palabra, esto con el fin de hacer una validación 
         para el ancho del texto requerido y no genere conflicto con  el metodo 
         justificar; @LongitudString sacara la palabra mas larga del arreglo y 
-        LNumbMaximo sacara  el tamaÃ±o en un dato numero  de la palabra mas larga
+        LNumbMaximo sacara  el tamaño en un dato numero  de la palabra mas larga
         en el arreglo.
      */
     public int LongitudMaximaString(String[] array) {
@@ -171,9 +173,9 @@ public class ProyectoProgramacionDinamica {
         }
         String[] arreglo = Texto.split(" ");
         /*
-        En Java el mÃ©todo split(String regEx) nos permite dividir una cadena en base
-        a las ocurrencias de una expresiÃ³n regular definida dentro. Ya que es una expresiÃ³n 
-        regular puede ser simplemente una letra, coma, signo o una construcciÃ³n mas elaborada.
+        En Java el método split(String regEx) nos permite dividir una cadena en base
+        a las ocurrencias de una expresión regular definida dentro. Ya que es una expresión 
+        regular puede ser simplemente una letra, coma, signo o una construcción mas elaborada.
          */
         return arreglo;
     }
