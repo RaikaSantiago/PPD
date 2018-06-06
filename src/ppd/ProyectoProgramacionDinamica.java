@@ -34,20 +34,20 @@ public class ProyectoProgramacionDinamica {
             for (int j = i; j < words.length; j++) {
                 if (cost[i][j] < 0) {
                     cost[i][j] = Integer.MAX_VALUE;
-                    //System.out.print("prueba1 " + cost[i][j] + " |");
+                    //      System.out.print("prueba1 " + cost[i][j] + " |");
                 } else {
                     cost[i][j] = (int) Math.pow(cost[i][j], 3);
-                    // System.out.print("prueba2 " + cost[i][j] + " |");
+                    //     System.out.print("prueba2 " + cost[i][j] + " |");
                 }
             }
         }
-        //Muestra la matriz  cost
-        for (int i = 0; i < words.length; i++) {
-            for (int j = 0; j < words.length; j++) {
-                System.out.print(cost[i][j] + "\t");
-            }
-            System.out.println();
-        }
+//        //Muestra la matriz  cost
+//        for (int i = 0; i < words.length; i++) {
+//            for (int j = 0; j < words.length; j++) {
+//                System.out.print(cost[i][j] + "\t");
+//            }
+//            System.out.println();
+//        }
 
         //minCost from i to len is found by trying
         //j between i to len and checking which
@@ -56,6 +56,7 @@ public class ProyectoProgramacionDinamica {
         int result[] = new int[words.length];
         for (int i = words.length - 1; i >= 0; i--) {
             minCost[i] = cost[i][words.length - 1];
+           // System.out.println(cost[i][words.length - 1]);
             result[i] = words.length;
             for (int j = words.length - 1; j > i; j--) {
                 if (cost[i][j - 1] == Integer.MAX_VALUE) {
@@ -63,6 +64,7 @@ public class ProyectoProgramacionDinamica {
                 }
                 if (minCost[i] > minCost[j] + cost[i][j - 1]) {
                     minCost[i] = minCost[j] + cost[i][j - 1];
+                  //  System.out.println(minCost[j] + cost[i][j - 1]);
                     result[i] = j;
                 }
             }
@@ -71,11 +73,11 @@ public class ProyectoProgramacionDinamica {
         int n = 0;
         int Auxiliar1;
 
-//        //Pruebas 
-//        for (int i = 0; i < minCost.length; i++) {
-//            System.out.println(minCost[i] + "");
+//        for (int i = 0; i < words.length; i++) {
+//           // for (int j = 0; j < words.length; j++) {
+//                System.out.println(minCost[i]);
+//            //}
 //        }
-//        System.out.println("\n");
 
         /*
           Finalmente pone todas las palabras con una nueva línea 
@@ -106,19 +108,22 @@ public class ProyectoProgramacionDinamica {
             //System.out.println(builder.append("1"));
             n = Auxiliar1;
         } while (Auxiliar1 < words.length);
-       
+
         /*
           @CSUR Me guarda el costo minimo  sin la ultima linea resta la ultima 
            posicion de los costo  con el total de los costos
-        */
+         */
         int CostoUltimaLinea = cost[cost.length - 1][cost.length - 1];
-        System.out.println("El Costo de la  Ultima linea Es: " + CostoUltimaLinea);
-        System.out.println("El Costo Minimo Es: " + (minCost[0] - CostoUltimaLinea));
+//        System.out.println("El Costo de la  Ultima linea Es: " + CostoUltimaLinea);
+//        System.out.println("El Costo Minimo Es: " + (minCost[0] - CostoUltimaLinea));
 
         String CSUR = Integer.toString(minCost[0] - CostoUltimaLinea);
-        
-        
-        
+
+//         for (int i = 0; i < words.length; i++) {
+//           // for(int j=0;j<cost.length;j++ ){
+//               System.out.println(cost[i][i+1]);
+//         //   }
+//        }
         if (b == 1) {
             return Variable1 = builder.toString();
         }
@@ -127,8 +132,10 @@ public class ProyectoProgramacionDinamica {
         } else {
             return Variable2 = Integer.toString(minCost[0]);
         }
-
     }
+    
+    
+    
 
     /*
         El Metodo  @LongitudMaximaString saca la longitud maxima de un elemento en un arreglo 
