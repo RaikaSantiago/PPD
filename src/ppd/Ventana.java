@@ -177,6 +177,7 @@ public class Ventana extends javax.swing.JFrame {
                                         + nl + "Por favor  aumente el ancho del renglón.","Mensaje Informativo",JOptionPane.INFORMATION_MESSAGE);
                             } else {
                                 TextoArea.setText(awl.Justificar(Dato, ancho, 1));
+                                awl.contarUltimaLinea(Dato,ancho, 1);
                                 int gb = Integer.parseInt(awl.Justificar(Dato, ancho, 0));
                                 Costo.setText(String.valueOf(gb));
                                 

@@ -186,5 +186,19 @@ public class ProyectoProgramacionDinamica {
          */
         return arreglo;
     }
+    
+    public int contarUltimaLinea(String words[], int width, int b){
+        
+        ProyectoProgramacionDinamica awl = new ProyectoProgramacionDinamica();
+        ;
+        
+        String[] arreglo = awl.Justificar(words, width, 1).split(" ");
+        
+         
+        for (int i = 0; i <arreglo.length; i++) {
+            System.out.print(arreglo[i].replaceAll(" ", "d"));
+        }
+        return 0;
+    }
 
 }
