@@ -179,7 +179,7 @@ public class Ventana extends javax.swing.JFrame {
                             if (ancho < Maximo) {
                                 String nl = System.getProperty("line.separator");
                                 JOptionPane.showMessageDialog(null, "Se encontro una palabra que excede el ancho del renglón solicitado."
-                                        + nl + "            Por favor  aumente el ancho del renglón.","Mensaje Informativo",JOptionPane.INFORMATION_MESSAGE);
+                                        + nl + "                     Por favor  aumente el ancho del renglón.","Mensaje Informativo",JOptionPane.INFORMATION_MESSAGE);
                             } else {
                                 TextoArea.setText(awl.Justificar(Dato, ancho, 1));
                                 int gb = Integer.parseInt(awl.Justificar(Dato, ancho, 0));
