@@ -1,6 +1,7 @@
 package ppd;
 
 import java.io.*;
+import javax.swing.JOptionPane;
 
 /*
    UNIVERSIDAD DEL VALLE
@@ -17,12 +18,14 @@ public class ProyectoProgramacionDinamica {
         String Variable1 = "";
         String Variable2 = "";
 
-        int cost[][] = new int[words.length][words.length];
+        
         /*
-        Acontinuación se representan dos bucles que me calcularan el costo 
-        de poner palabras de i a j  en una linea Si las palabras  no encajan  en una linea,
-        entonces ponemos un entero max_value
+            Acontinuación se representan dos bucles que me calcularan el costo 
+            de poner palabras de i a j  en una linea Si las palabras  no encajan  en una linea,
+            entonces ponemos un entero max_value
          */
+        int cost[][] = new int[words.length][words.length];
+        
         for (int i = 0; i < words.length; i++) {
             cost[i][i] = width - words[i].length();
             for (int j = i + 1; j < words.length; j++) {
@@ -56,7 +59,7 @@ public class ProyectoProgramacionDinamica {
         int result[] = new int[words.length];
         for (int i = words.length - 1; i >= 0; i--) {
             minCost[i] = cost[i][words.length - 1];
-           // System.out.println(cost[i][words.length - 1]);
+            // System.out.println(cost[i][words.length - 1]);
             result[i] = words.length;
             for (int j = words.length - 1; j > i; j--) {
                 if (cost[i][j - 1] == Integer.MAX_VALUE) {
@@ -64,7 +67,7 @@ public class ProyectoProgramacionDinamica {
                 }
                 if (minCost[i] > minCost[j] + cost[i][j - 1]) {
                     minCost[i] = minCost[j] + cost[i][j - 1];
-                  //  System.out.println(minCost[j] + cost[i][j - 1]);
+                    //  System.out.println(minCost[j] + cost[i][j - 1]);
                     result[i] = j;
                 }
             }
@@ -73,30 +76,24 @@ public class ProyectoProgramacionDinamica {
         int n = 0;
         int Auxiliar1;
 
-//        for (int i = 0; i < words.length; i++) {
-//           // for (int j = 0; j < words.length; j++) {
-//                System.out.println(minCost[i]);
-//            //}
-//        }
-
         /*
           Finalmente pone todas las palabras con una nueva línea 
           agregada en el búfer de cadena y lo impríme.
          */
-        StringBuilder builder = new StringBuilder();
-        /*
-        Un objeto StringBuilder es una secuencia de caracteres mutable, 
-        su contenido y capacidad puede cambiar en cualquier momento. Además,
-        a diferencia de los Strings, los builders cuentan con una capacidad (capacity),
-        la cantidad de espacios de caracteres asignados. 
-        Ésta es siempre mayor o igual que la longitud (length) y
-        se expande automáticamente para acomodarse a más caracteres.
-        
-        Los operadores principales de la clase StringBuilder son append e insert. 
-        Éstos se implementaron sobrecargados para aceptar cualquier tipo de datos.
-        Cada uno convierte un dato en String y concatena o inserta los caracteres de dicho String al StrinBuilder.
-        El método append agrega los caracteres al final de builder mientras que insert los agrega en un punto específico.
+ /*
+            Un objeto StringBuilder es una secuencia de caracteres mutable, 
+            su contenido y capacidad puede cambiar en cualquier momento. Además,
+            a diferencia de los Strings, los builders cuentan con una capacidad (capacity),
+            la cantidad de espacios de caracteres asignados. 
+            Ésta es siempre mayor o igual que la longitud (length) y
+            se expande automáticamente para acomodarse a más caracteres.
+
+            Los operadores principales de la clase StringBuilder son append e insert. 
+            Éstos se implementaron sobrecargados para aceptar cualquier tipo de datos.
+            Cada uno convierte un dato en String y concatena o inserta los caracteres de dicho String al StrinBuilder.
+            El método append agrega los caracteres al final de builder mientras que insert los agrega en un punto específico.
          */
+        StringBuilder builder = new StringBuilder();
         do {
             Auxiliar1 = result[n];
             for (int i = n; i < Auxiliar1; i++) {
@@ -105,25 +102,34 @@ public class ProyectoProgramacionDinamica {
             }
 
             builder.append("\n");
-            //System.out.println(builder.append("1"));
+
             n = Auxiliar1;
         } while (Auxiliar1 < words.length);
 
         /*
           @CSUR Me guarda el costo minimo  sin la ultima linea resta la ultima 
-           posicion de los costo  con el total de los costos
+           posicion de los costo  con el total de los costos, 
+           esta posicion puede ser cambiante en la columna de j. 
          */
+        String CSUR = "";
         int CostoUltimaLinea = cost[cost.length - 1][cost.length - 1];
-//        System.out.println("El Costo de la  Ultima linea Es: " + CostoUltimaLinea);
-//        System.out.println("El Costo Minimo Es: " + (minCost[0] - CostoUltimaLinea));
 
-        String CSUR = Integer.toString(minCost[0] - CostoUltimaLinea);
+        if (minCost[0] - CostoUltimaLinea < 0) {
 
-//         for (int i = 0; i < words.length; i++) {
-//           // for(int j=0;j<cost.length;j++ ){
-//               System.out.println(cost[i][i+1]);
-//         //   }
-//        }
+            for (int i = 1; minCost[0] - CostoUltimaLinea < 0; i++) {
+                CostoUltimaLinea = cost[(cost.length - 1) - i][cost.length - 1];
+            }
+            if (CostoUltimaLinea == minCost[0]) {
+                CSUR = Integer.toString(minCost[0]);
+            } else {
+
+                CSUR = Integer.toString(minCost[0] - CostoUltimaLinea);
+            }
+        } else {
+
+            CSUR = Integer.toString(minCost[0] - CostoUltimaLinea);
+        }
+
         if (b == 1) {
             return Variable1 = builder.toString();
         }
@@ -133,9 +139,6 @@ public class ProyectoProgramacionDinamica {
             return Variable2 = Integer.toString(minCost[0]);
         }
     }
-    
-    
-    
 
     /*
         El Metodo  @LongitudMaximaString saca la longitud maxima de un elemento en un arreglo 
@@ -178,27 +181,13 @@ public class ProyectoProgramacionDinamica {
         } catch (Exception e) {
             System.err.println("No se encontro el archivo");
         }
-        String[] arreglo = Texto.split(" ");
-        /*
-        En Java el método split(String regEx) nos permite dividir una cadena en base
-        a las ocurrencias de una expresión regular definida dentro. Ya que es una expresión 
-        regular puede ser simplemente una letra, coma, signo o una construcción mas elaborada.
+         /*
+            En Java el método split(String regEx) nos permite dividir una cadena en base
+            a las ocurrencias de una expresión regular definida dentro. Ya que es una expresión 
+            regular puede ser simplemente una letra, coma, signo o una construcción mas elaborada.
          */
+        String[] arreglo = Texto.split(" ");
+       
         return arreglo;
     }
-    
-    public int contarUltimaLinea(String words[], int width, int b){
-        
-        ProyectoProgramacionDinamica awl = new ProyectoProgramacionDinamica();
-        ;
-        
-        String[] arreglo = awl.Justificar(words, width, 1).split(" ");
-        
-         
-        for (int i = 0; i <arreglo.length; i++) {
-            System.out.print(arreglo[i].replaceAll(" ", "d"));
-        }
-        return 0;
-    }
-
 }

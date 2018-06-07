@@ -158,7 +158,7 @@ public class Ventana extends javax.swing.JFrame {
 
         String[] Dato = null;
         ProyectoProgramacionDinamica awl = new ProyectoProgramacionDinamica();
-
+  
         try {
             int ancho = Integer.parseInt(InAncho.getText());
             if (ancho <= 0 || InAncho.getText().length() == 0) {
@@ -166,6 +166,7 @@ public class Ventana extends javax.swing.JFrame {
             } else {
                 if (seleccionar.showDialog(null, "Abrir") == JFileChooser.APPROVE_OPTION) {
                     archivo = seleccionar.getSelectedFile();
+                    
                     if (archivo.canRead()) {
                         if (archivo.getName().endsWith("txt")) {
 
@@ -177,7 +178,6 @@ public class Ventana extends javax.swing.JFrame {
                                         + nl + "Por favor  aumente el ancho del renglón.","Mensaje Informativo",JOptionPane.INFORMATION_MESSAGE);
                             } else {
                                 TextoArea.setText(awl.Justificar(Dato, ancho, 1));
-                                awl.contarUltimaLinea(Dato,ancho, 1);
                                 int gb = Integer.parseInt(awl.Justificar(Dato, ancho, 0));
                                 Costo.setText(String.valueOf(gb));
                                 
@@ -192,8 +192,8 @@ public class Ventana extends javax.swing.JFrame {
                 }
             }
         } catch (Exception e) {
-
-            JOptionPane.showMessageDialog(null, "Llene el campo del ancho con un valor numerico.","Mensaje de Error",JOptionPane.ERROR_MESSAGE);
+            String nl = System.getProperty("line.separator");
+            JOptionPane.showMessageDialog(null, "ERROR"+nl+ "El campo del ancho debe ser un valor numerico."+nl+ "El archivo no debe estar vacio.","Mensaje de Error",JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
