@@ -57,7 +57,7 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("El Costo Minimo Con El Ultimo Renglón  ");
+        jLabel1.setText("  Costo Minimo Con El Ultimo Renglón  ");
 
         InAncho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,7 +74,7 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText(" El Costo Minimo Sin El Ultimo Renglón  ");
+        jLabel4.setText("   Costo Minimo Sin El Ultimo Renglón  ");
 
         CSUR.setEditable(false);
 
@@ -113,7 +113,7 @@ public class Ventana extends javax.swing.JFrame {
                                 .addComponent(jButton1)))
                         .addGap(0, 0, 0)
                         .addComponent(jLabel2)
-                        .addContainerGap(25, Short.MAX_VALUE))
+                        .addContainerGap(28, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel3)

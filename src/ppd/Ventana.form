@@ -61,7 +61,7 @@
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
+                      <EmptySpace pref="28" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -151,7 +151,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="El Costo Minimo Con El Ultimo Rengl&#xf3;n  "/>
+        <Property name="text" type="java.lang.String" value="  Costo Minimo Con El Ultimo Rengl&#xf3;n  "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -176,7 +176,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value=" El Costo Minimo Sin El Ultimo Rengl&#xf3;n  "/>
+        <Property name="text" type="java.lang.String" value="   Costo Minimo Sin El Ultimo Rengl&#xf3;n  "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="CSUR">
