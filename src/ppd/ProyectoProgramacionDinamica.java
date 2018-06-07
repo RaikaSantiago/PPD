@@ -113,7 +113,7 @@ public class ProyectoProgramacionDinamica {
          */
         String CSUR = "";
         int CostoUltimaLinea = cost[cost.length - 1][cost.length - 1];
-
+        //System.out.println("minCost :"+minCost[0]);
         if (minCost[0] - CostoUltimaLinea < 0) {
 
             for (int i = 1; minCost[0] - CostoUltimaLinea < 0; i++) {
