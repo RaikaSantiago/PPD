@@ -8,8 +8,25 @@ import javax.swing.JOptionPane;
    FACULTAD DE INGENIERIA
    MATERIA FADA, TEMA OPTIMIZACIÓN
    PROYECTO JUSTIFICACIÓN DE TEXTO 
+   
+   Integrantes:
+        Santiago Rivera Escobar ? 1664066
+        Cristian Correa Serna - 1556137
+        Víctor Hugo Romero García ? 1663967
 
    Planteamiento:
+
+    Sea m[ j ] el vector que recibe las palabras del texto y sea C[ i ][ j-1 ]
+    la matriz que guarda los costos de cada una de las líneas del texto. Teniendo
+    en cuenta la sucesión de las palabras basados en el ancho asignado.
+    Primero calculamos los costos de todas las líneas posibles en una matriz de dos 
+    dimensiones C [i] [j]. El valor C[i] [j] indica el costo de poner palabras de i a j 
+    en una sola línea donde i y j son índices de palabras en las secuencias de entrada. 
+    Si una secuencia de palabras de i a j no cabe en una sola línea, entonces C[i] [j] 
+    se considera infinito (para evitar que forme parte de la solución). Una vez que tenemos
+    la matriz C [i] [j] construida, podemos calcular el costo total usando la recursividad 
+    propuesta en el siguiente punto.
+        m[ j ] + C[ i ][ j-1 ]
  */
 public class ProyectoProgramacionDinamica {
 
@@ -51,9 +68,7 @@ public class ProyectoProgramacionDinamica {
 //            System.out.println();
 //        }
 
-        //minCost from i to len is found by trying
-        //j between i to len and checking which
-        //one has min value
+
         int minCost[] = new int[words.length];
         int result[] = new int[words.length];
         for (int i = words.length - 1; i >= 0; i--) {
@@ -113,6 +128,7 @@ public class ProyectoProgramacionDinamica {
         String CSUR = "";
         int CostoUltimaLinea = cost[cost.length - 1][cost.length - 1];
         //System.out.println("minCost :"+minCost[0]);
+        
         if (minCost[0] - CostoUltimaLinea < 0) {
 
             for (int i = 1; minCost[0] - CostoUltimaLinea < 0; i++) {
@@ -153,7 +169,7 @@ public class ProyectoProgramacionDinamica {
         String LongitudString = null;
         for (String AuxMax : array) {
             if (AuxMax.length() > LongitudMax) {
-                LongitudMax = AuxMax.length();
+                    LongitudMax = AuxMax.length();
                 LongitudString = AuxMax;
             }
         }
