@@ -17,9 +17,9 @@ import ppd.ProyectoProgramacionDinamica;
    PROYECTO JUSTIFICACIÓN DE TEXTO 
    
    Integrantes:
-        Santiago Rivera Escobar ? 1664066
+        Santiago Rivera Escobar - 1664066
         Cristian Correa Serna - 1556137
-        Víctor Hugo Romero García ? 1663967
+        Víctor Hugo Romero García - 1663967
  */
 public class Ventana extends javax.swing.JFrame {
 

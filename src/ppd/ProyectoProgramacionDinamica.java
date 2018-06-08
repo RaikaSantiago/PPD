@@ -9,9 +9,9 @@ import java.io.*;
    PROYECTO JUSTIFICACIÓN DE TEXTO 
    
    Integrantes:
-        Santiago Rivera Escobar ? 1664066
+        Santiago Rivera Escobar - 1664066
         Cristian Correa Serna - 1556137
-        Víctor Hugo Romero García ? 1663967
+        Víctor Hugo Romero García - 1663967
 
    Planteamiento:
 
@@ -30,6 +30,10 @@ import java.io.*;
 public class ProyectoProgramacionDinamica {
 
     public String Justificar(String words[], int width, int b) {
+
+//        long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
+//        TInicio = System.currentTimeMillis(); //Tomamos la hora en que inició el algoritmo y la almacenamos en la variable inicio.
+//        TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
 
         String Variable1 = "";
         String Variable2 = "";
@@ -143,6 +147,9 @@ public class ProyectoProgramacionDinamica {
             CSUR = Integer.toString(minCost[0] - CostoUltimaLinea);
         }
 
+//        tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+//        System.out.println("Tiempo de ejecución para el metodo Justificar en milisegundos : " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
+
         if (b == 1) {
             return Variable1 = builder.toString();
         }
@@ -151,6 +158,7 @@ public class ProyectoProgramacionDinamica {
         } else {
             return Variable2 = Integer.toString(minCost[0]);
         }
+
     }
 
     /*
@@ -163,6 +171,10 @@ public class ProyectoProgramacionDinamica {
      */
     public String LongitudMaximaString(String[] array) {
 
+//        long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
+//        TInicio = System.currentTimeMillis(); //Tomamos la hora en que inició el algoritmo y la almacenamos en la variable inicio.
+//        TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+
         int LongitudMax = 0;
         String LongitudString = null;
         for (String AuxMax : array) {
@@ -172,11 +184,17 @@ public class ProyectoProgramacionDinamica {
             }
         }
         //  System.out.println("Maximo Es: " + LongitudString);
+//        tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+//        System.out.println("Tiempo de ejecución para el metodo LongitudMaximaString en milisegundos : " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 
         return LongitudString;
     }
 
     public String[] LeerArchivo(File direccion) {
+
+//        long TInicio, TFin, tiempo; //Variables para determinar el tiempo de ejecución
+//        TInicio = System.currentTimeMillis(); //Tomamos la hora en que inició el algoritmo y la almacenamos en la variable inicio.
+//        TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
 
         String Texto = "";
 
@@ -199,6 +217,9 @@ public class ProyectoProgramacionDinamica {
             regular puede ser simplemente una letra, coma, signo o una construcción mas elaborada.
          */
         String[] arreglo = Texto.split(" ");
+
+//        tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+//        System.out.println("Tiempo de ejecución para el metodo LeerArchivo en milisegundos : " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 
         return arreglo;
     }
