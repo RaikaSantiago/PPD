@@ -1,7 +1,6 @@
 package ppd;
 
 import java.io.*;
-import javax.swing.JOptionPane;
 
 /*
    UNIVERSIDAD DEL VALLE
@@ -68,7 +67,6 @@ public class ProyectoProgramacionDinamica {
 //            System.out.println();
 //        }
 
-
         int minCost[] = new int[words.length];
         int result[] = new int[words.length];
         for (int i = words.length - 1; i >= 0; i--) {
@@ -128,7 +126,7 @@ public class ProyectoProgramacionDinamica {
         String CSUR = "";
         int CostoUltimaLinea = cost[cost.length - 1][cost.length - 1];
         //System.out.println("minCost :"+minCost[0]);
-        
+
         if (minCost[0] - CostoUltimaLinea < 0) {
 
             for (int i = 1; minCost[0] - CostoUltimaLinea < 0; i++) {
@@ -169,7 +167,7 @@ public class ProyectoProgramacionDinamica {
         String LongitudString = null;
         for (String AuxMax : array) {
             if (AuxMax.length() > LongitudMax) {
-                    LongitudMax = AuxMax.length();
+                LongitudMax = AuxMax.length();
                 LongitudString = AuxMax;
             }
         }

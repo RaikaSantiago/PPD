@@ -5,6 +5,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import ppd.ProyectoProgramacionDinamica;
+
 /*
    UNIVERSIDAD DEL VALLE
    FACULTAD DE INGENIERIA
@@ -15,7 +16,7 @@ import ppd.ProyectoProgramacionDinamica;
         Santiago Rivera Escobar ? 1664066
         Cristian Correa Serna - 1556137
         Víctor Hugo Romero García ? 1663967
-*/
+ */
 public class Ventana extends javax.swing.JFrame {
 
     JFileChooser seleccionar = new JFileChooser();
@@ -202,7 +203,7 @@ public class Ventana extends javax.swing.JFrame {
                             Dato = awl.LeerArchivo(archivo);
                             String Palabra = awl.LongitudMaximaString(Dato);
                             int Maximo = Palabra.length();
-                            
+
                             if (ancho < Maximo) {
                                 String nl = System.getProperty("line.separator");
                                 JOptionPane.showMessageDialog(null, "Se encontro una palabra que excede el ancho del renglón solicitado."
@@ -247,10 +248,10 @@ public class Ventana extends javax.swing.JFrame {
 
     private void AutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AutoresActionPerformed
         String nl = System.getProperty("line.separator");
-        JOptionPane.showMessageDialog(null,"Santiago Rivera Escobar Código:1664066"+nl
-                +"Cristian Correa Serna Código:1556137"+nl
-                +"Víctor Hugo Romero García Código:1663967"+nl
-                +"        Todos los derechos reservados", "Autores", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Santiago Rivera Escobar Código:1664066" + nl
+                + "Cristian Correa Serna Código:1556137" + nl
+                + "Víctor Hugo Romero García Código:1663967" + nl
+                + "        Todos los derechos reservados", "Autores", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_AutoresActionPerformed
 
     /**
