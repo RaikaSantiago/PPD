@@ -162,34 +162,37 @@ public class Ventana extends javax.swing.JFrame {
 
         String[] Dato = null;
         ProyectoProgramacionDinamica awl = new ProyectoProgramacionDinamica();
-  
+
         try {
             int ancho = Integer.parseInt(InAncho.getText());
             if (ancho <= 0 || InAncho.getText().length() == 0) {
-                JOptionPane.showMessageDialog(null, "Llene el campo del ancho con un valor numerico mayor a cero","Mensaje de Advertencia",JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Llene el campo del ancho con un valor numerico mayor a cero", "Mensaje de Advertencia", JOptionPane.WARNING_MESSAGE);
             } else {
                 if (seleccionar.showDialog(null, "Abrir") == JFileChooser.APPROVE_OPTION) {
                     archivo = seleccionar.getSelectedFile();
-                    
+
                     if (archivo.canRead()) {
                         if (archivo.getName().endsWith("txt")) {
 
                             Dato = awl.LeerArchivo(archivo);
-                            int Maximo = awl.LongitudMaximaString(Dato);
+                            String Palabra = awl.LongitudMaximaString(Dato);
+                            int Maximo = Palabra.length();
+                            
                             if (ancho < Maximo) {
                                 String nl = System.getProperty("line.separator");
                                 JOptionPane.showMessageDialog(null, "Se encontro una palabra que excede el ancho del renglón solicitado."
-                                        + nl + "                     Por favor  aumente el ancho del renglón.","Mensaje Informativo",JOptionPane.INFORMATION_MESSAGE);
+                                        + nl + "                 La palabra es: " + Palabra + " Y Mide:  " + Maximo + nl
+                                        + "                     Por favor  aumente el ancho del renglón.", "Mensaje Informativo", JOptionPane.INFORMATION_MESSAGE);
                             } else {
                                 TextoArea.setText(awl.Justificar(Dato, ancho, 1));
                                 int gb = Integer.parseInt(awl.Justificar(Dato, ancho, 0));
                                 Costo.setText(String.valueOf(gb));
-                                
+
                                 int gb1 = Integer.parseInt(awl.Justificar(Dato, ancho, 2));
                                 CSUR.setText(String.valueOf(gb1));
                             }
                         } else {
-                            JOptionPane.showMessageDialog(null, "Archivo no compatible","Mensaje de Advertencia",JOptionPane.WARNING_MESSAGE);
+                            JOptionPane.showMessageDialog(null, "Archivo no compatible", "Mensaje de Advertencia", JOptionPane.WARNING_MESSAGE);
 
                         }
                     }
@@ -197,7 +200,7 @@ public class Ventana extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             String nl = System.getProperty("line.separator");
-            JOptionPane.showMessageDialog(null, "ERROR"+nl+ "El campo del ancho debe ser un valor numerico."+nl+ "El archivo no debe estar vacio.","Mensaje de Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "ERROR" + nl + "El campo del ancho debe ser un valor numerico." + nl + "El archivo no debe estar vacio.", "Mensaje de Error", JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed

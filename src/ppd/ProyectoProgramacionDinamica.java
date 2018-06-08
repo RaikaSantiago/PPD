@@ -18,14 +18,13 @@ public class ProyectoProgramacionDinamica {
         String Variable1 = "";
         String Variable2 = "";
 
-        
         /*
             Acontinuación se representan dos bucles que me calcularan el costo 
             de poner palabras de i a j  en una linea Si las palabras  no encajan  en una linea,
             entonces ponemos un entero max_value
          */
         int cost[][] = new int[words.length][words.length];
-        
+
         for (int i = 0; i < words.length; i++) {
             cost[i][i] = width - words[i].length();
             for (int j = i + 1; j < words.length; j++) {
@@ -148,7 +147,7 @@ public class ProyectoProgramacionDinamica {
         LNumbMaximo sacara  el tamaño en un dato numero  de la palabra mas larga
         en el arreglo.
      */
-    public int LongitudMaximaString(String[] array) {
+    public String LongitudMaximaString(String[] array) {
 
         int LongitudMax = 0;
         String LongitudString = null;
@@ -159,9 +158,8 @@ public class ProyectoProgramacionDinamica {
             }
         }
         //  System.out.println("Maximo Es: " + LongitudString);
-        int LNumbMaximo = LongitudString.length();
-        //  System.out.println("Maximo num Es: " + LMaximo);
-        return LNumbMaximo;
+
+        return LongitudString;
     }
 
     public String[] LeerArchivo(File direccion) {
@@ -181,13 +179,13 @@ public class ProyectoProgramacionDinamica {
         } catch (Exception e) {
             System.err.println("No se encontro el archivo");
         }
-         /*
+        /*
             En Java el método split(String regEx) nos permite dividir una cadena en base
             a las ocurrencias de una expresión regular definida dentro. Ya que es una expresión 
             regular puede ser simplemente una letra, coma, signo o una construcción mas elaborada.
          */
         String[] arreglo = Texto.split(" ");
-       
+
         return arreglo;
     }
 }
