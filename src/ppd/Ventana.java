@@ -1,10 +1,21 @@
 package ppd;
 
 import java.io.*;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import ppd.ProyectoProgramacionDinamica;
-
+/*
+   UNIVERSIDAD DEL VALLE
+   FACULTAD DE INGENIERIA
+   MATERIA FADA, TEMA OPTIMIZACIÓN
+   PROYECTO JUSTIFICACIÓN DE TEXTO 
+   
+   Integrantes:
+        Santiago Rivera Escobar ? 1664066
+        Cristian Correa Serna - 1556137
+        Víctor Hugo Romero García ? 1663967
+*/
 public class Ventana extends javax.swing.JFrame {
 
     JFileChooser seleccionar = new JFileChooser();
@@ -15,6 +26,7 @@ public class Ventana extends javax.swing.JFrame {
 
     public Ventana() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/Imagenes/uni.PNG")).getImage());
     }
 
     @SuppressWarnings("unchecked")
@@ -33,6 +45,7 @@ public class Ventana extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         CSUR = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        Autores = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Justificador De Texto");
@@ -81,6 +94,13 @@ public class Ventana extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel5.setText("JUSTIFICADOR DE TEXTO ");
 
+        Autores.setText("Autores");
+        Autores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AutoresActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -119,7 +139,11 @@ public class Ventana extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(InAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(60, 60, 60))))
+                        .addGap(60, 60, 60))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Autores)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,7 +174,8 @@ public class Ventana extends javax.swing.JFrame {
                         .addComponent(CSUR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2)
-                        .addGap(0, 38, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addComponent(Autores))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );
@@ -220,6 +245,14 @@ public class Ventana extends javax.swing.JFrame {
         CSUR.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void AutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AutoresActionPerformed
+        String nl = System.getProperty("line.separator");
+        JOptionPane.showMessageDialog(null,"Santiago Rivera Escobar Código:1664066"+nl
+                +"Cristian Correa Serna Código:1556137"+nl
+                +"Víctor Hugo Romero García Código:1663967"+nl
+                +"        Todos los derechos reservados", "Autores", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_AutoresActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -256,6 +289,7 @@ public class Ventana extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Autores;
     private javax.swing.JTextField CSUR;
     private javax.swing.JTextField Costo;
     private javax.swing.JTextField InAncho;

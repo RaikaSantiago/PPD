@@ -70,6 +70,11 @@
                       <Component id="InAncho" min="-2" pref="56" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="Autores" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
       </Group>
@@ -107,7 +112,8 @@
                       <Component id="CSUR" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="38" max="32767" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
+                      <Component id="Autores" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" max="32767" attributes="0"/>
               </Group>
@@ -191,6 +197,14 @@
         </Property>
         <Property name="text" type="java.lang.String" value="JUSTIFICADOR DE TEXTO "/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="Autores">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Autores"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AutoresActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
